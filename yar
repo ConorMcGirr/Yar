@@ -4,7 +4,7 @@ torrent_client=transmission-gtk
 
 while :
 do
-    nord_status=$(echo $(nordvpn status | grep Country)) #&& echo "NORDVPN STATUS = $nord_status"
+    nord_status=$(echo $(nordvpn status | grep Country))
     if [ "$nord_status" == "$expected_status" ]; then
         # Open torrent client if not already open
         pgrep $torrent_client > /dev/null || $torrent_client &
